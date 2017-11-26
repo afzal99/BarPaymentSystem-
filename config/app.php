@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Bar Payment System'),
 
     /*
     |--------------------------------------------------------------------------
@@ -167,6 +167,8 @@ return [
         /*
          * Package Service Providers...
          */
+
+        Laravel/Passport/PassportServiceProvider::class,
 
         /*
          * Application Service Providers...
