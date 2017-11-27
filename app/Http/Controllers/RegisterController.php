@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreUserRequest;
 use App\User;
+use App\Transformers\UserTransformer;
 
 class RegisterController extends Controller
 {
@@ -17,6 +18,11 @@ class RegisterController extends Controller
         $user->password = bcrypt($request->password);
 
         $user->save();
+
+        return fractal()
+        ->item($user)
+        ->transformWith(new UserTransformer)
+        ->toArray();
 
     }
 }
