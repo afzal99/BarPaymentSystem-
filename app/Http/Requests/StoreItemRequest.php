@@ -2,7 +2,8 @@
 
 namespace App\Http\Requests;
 
-class StoreUserRequest extends FormRequest
+
+class StoreItemRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,9 +23,10 @@ class StoreUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'username' => 'required|max:30',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'required|min:6'
+            'name' => 'required|max:255',
+            'description' => 'required|max:2000',
+            'purchase_price' => 'required|max:10',
+            'retail_price' => 'required|max:20'
         ];
     }
 }

@@ -28,6 +28,10 @@ class User extends Authenticatable
         'password', 'remember_token'
     ];
 
+    public function item(){
+        return $this->hasMany('App\Item');
+    }
+
     public function avatar()
     {
         return 'http://www.gravatar.com/avatar/'.md5($this->email).'?s=45&d=mm';
