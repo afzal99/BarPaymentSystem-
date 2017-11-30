@@ -17,7 +17,7 @@ class CreateCustomersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email');
-            $table->string('password');
+            $table->string('contact');
             $table->string('nfc');
             $table->string('secret');
             $table->timestamps();

@@ -9,16 +9,20 @@ class Customer extends Model
     protected $fillable=[
     	'name',
         'email',
-        'password',
+        'contact',
         'secret'        
     ];
     protected $hidden = [
-        'password',
+        
     ];
 
 
     public function sale(){
         return $this->hasMany('App\Sale');
+    }
+
+    public function group(){
+        return $this->belongsToMany('App\Group');
     }
     
 }

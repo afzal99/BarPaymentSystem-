@@ -117,6 +117,12 @@ class ItemController extends Controller
     {
         $item->delete();
 
-        return response(null, 204);
+        //return response(null, 204);
+return '
+{
+    "data"=> {
+        "message":"Item deleted successfully"
+    }
+}';
     }
 }

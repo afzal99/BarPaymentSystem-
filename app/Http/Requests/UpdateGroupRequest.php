@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Requests;
+
 use Illuminate\Foundation\Http\FormRequest;
-class UpdateItemRequest extends FormRequest
+
+class UpdateGroupRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,9 +25,7 @@ class UpdateItemRequest extends FormRequest
     {
         return [
             'name' => 'max:255',
-            'description' => 'max:2000',
-            'purchase_price' => 'max:10',
-            'retail_price' => 'max:20'
+            'discount_percentage' => 'max:3'
         ];
     }
 }

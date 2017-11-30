@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Requests;
-
+use Illuminate\Foundation\Http\FormRequest;
 
 class StoreItemRequest extends FormRequest
 {
@@ -23,7 +23,7 @@ class StoreItemRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|max:255',
+            'name' => 'required|max:255|unique:items,name',
             'description' => 'required|max:2000',
             'purchase_price' => 'required|max:10',
             'retail_price' => 'required|max:20'

@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Requests;
+
 use Illuminate\Foundation\Http\FormRequest;
-class UpdateItemRequest extends FormRequest
+
+class StoreGroupRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +24,8 @@ class UpdateItemRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'max:255',
-            'description' => 'max:2000',
-            'purchase_price' => 'max:10',
-            'retail_price' => 'max:20'
+            'name' => 'required|max:255|unique:groups,name',
+            'discount_percentage' => 'required|max:3'
         ];
     }
 }
