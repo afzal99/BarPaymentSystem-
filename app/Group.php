@@ -12,7 +12,7 @@ class Group extends Model
     ];
 
 
-    public function customer(){
-        return $this->belongsToMany('App\Customer');
+    public function user(){
+        return $this->belongsToMany('App\User');
     }
 }

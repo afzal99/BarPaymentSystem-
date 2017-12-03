@@ -12,5 +12,4 @@ class Sale extends Model
     public function customer(){
         return $this->belongsTo('App\Customer');
     }
-    
 }

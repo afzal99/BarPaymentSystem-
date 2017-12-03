@@ -14,6 +14,10 @@ class Item extends Model
         'user_id'       
     ];
 
+    public function item_group(){
+        return $this->belongsTo('App\Item_Group');
+    }
+
     public function sale(){
         return $this->belongsToMany('App\Sale');
     }
