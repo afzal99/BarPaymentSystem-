@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Requests;
+
 use Illuminate\Foundation\Http\FormRequest;
-class StoreUserRequest extends FormRequest
+
+class StoreItemGroupRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,14 +24,8 @@ class StoreUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'fname' => 'required|max:30',
-            'lname' => 'required|max:30',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'max:30',
-            'contact' => 'max:30',
-            'nfc' => 'max:30',
-            'secret' => 'max:30',
-            'role_id' => 'required|min:1'
+            'name' => 'required|max:255|unique:item__groups,name',
+            'description' => 'max:1000'
         ];
     }
 }

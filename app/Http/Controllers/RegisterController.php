@@ -13,9 +13,15 @@ class RegisterController extends Controller
     {
         $user= new User;
 
-        $user->username = $request->username;
+        $user->fname = $request->fname;
+        $user->lname = $request->lname;
         $user->email = $request->email;
-        $user->password = bcrypt($request->password);
+        $user->password = bcrypt("123123");
+        $user->contact = $request->contact;
+        $user->nfc = $request->nfc;
+        $user->secret = $request->secret;
+        $user->role_id = $request->role_id;
+        
 
         $user->save();
 
