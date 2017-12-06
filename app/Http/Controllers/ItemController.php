@@ -53,6 +53,7 @@ class ItemController extends Controller
         $item->description = $request->description;
         $item->purchase_price = $request->purchase_price;
         $item->retail_price = $request->retail_price;
+        $item->group_id= $request->group_id;
         $item->user()->associate($request->user());
         
         $item->save();

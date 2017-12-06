@@ -12,6 +12,7 @@ class ItemTransformer extends \League\Fractal\TransformerAbstract{
                 'id' => $item->id,
                 'name' => $item->name,
                 'description'  => $item->description,
+                'group_id' => $item->group_id,
                 'created_at' => $item->created_at->toDateTimeString(),
                 'created_at_human' => $item->created_at->diffForHumans()
             ];

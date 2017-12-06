@@ -65,10 +65,10 @@ class ItemGroupController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Item_Group $itemGroup)
+    public function show(Item_Group $itemgroup)
     {
         return fractal()
-        ->item($itemGroup)
+        ->item($itemgroup)
         ->transformWith(new ItemGroupTransformer)
         ->toArray();
     }
@@ -91,7 +91,7 @@ class ItemGroupController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateItemGroupRequest $request, Item_Group $itemgroups)
+    public function update(UpdateItemGroupRequest $request, Item_Group $itemgroup)
     {
         //
     }

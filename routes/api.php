@@ -12,8 +12,8 @@ Route::group(['prefix' => 'itemgroups'], function(){
     Route::get('/','ItemGroupController@index');
     Route::get('/{itemgroup}','ItemGroupController@show');
     Route::post('/','ItemGroupController@store')->middleware('auth:api');
-    Route::patch('/{itemgroup}','ItemGroupController@update')->middleware('auth:api');
-    Route::delete('/{itemgroup}','ItemGroupController@destroy')->middleware('auth:api');
+    Route::patch('/{itemgroup}','ItemGroupController@update')->middleware('auth:api'); //controller remains
+    Route::delete('/{itemgroup}','ItemGroupController@destroy')->middleware('auth:api'); //controller remains
     
 });
 
@@ -33,4 +33,6 @@ Route::group(['prefix' => 'groups'], function(){
     Route::patch('/{group}','GroupController@update')->middleware('auth:api');
     Route::delete('/{group}','GroupController@destroy')->middleware('auth:api');
 });
+
+
 

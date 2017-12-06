@@ -23,11 +23,10 @@ class CreateUsersTable extends Migration
             $table->string('contact')->nullable();
             $table->string('nfc')->nullable();
             $table->string('secret')->nullable();
-            $table->integer('role_id')->unsigned();
             $table->rememberToken();
             $table->timestamps();
 
-            $table->foreign('role_id')->references('id')->on('roles');
+           
         });}
     }
 

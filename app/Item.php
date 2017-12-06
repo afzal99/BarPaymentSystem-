@@ -11,7 +11,8 @@ class Item extends Model
         'description',
         'purchase_price',
         'retail_price',
-        'user_id'       
+        'user_id',
+        'group_id'    
     ];
 
     public function item_group(){
