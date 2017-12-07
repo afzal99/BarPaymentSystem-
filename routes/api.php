@@ -7,6 +7,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/register','RegisterController@register');
+Route::post('/sale','SaleController@store')->middleware('auth:api');
+
 
 Route::group(['prefix' => 'itemgroups'], function(){
     Route::get('/','ItemGroupController@index');
@@ -32,6 +34,7 @@ Route::group(['prefix' => 'groups'], function(){
     Route::post('/','GroupController@store')->middleware('auth:api');
     Route::patch('/{group}','GroupController@update')->middleware('auth:api');
     Route::delete('/{group}','GroupController@destroy')->middleware('auth:api');
+    
 });
 
 

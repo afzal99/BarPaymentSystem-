@@ -24,12 +24,11 @@ class StoreUserRequest extends FormRequest
         return [
             'fname' => 'required|max:30',
             'lname' => 'required|max:30',
-            'email' => 'required|email|max:255|unique:users',
-            'password' => 'max:30',
-            'contact' => 'max:30',
-            'nfc' => 'max:30',
-            'secret' => 'max:30',
-            'role_id' => 'required|min:1'
+            'email' => 'required|email|max:255|unique:users,email',
+            'password' => 'required|min:6',
+            'contact' => 'max:15',
+            'nfc' => 'max:10',
+            'secret' => 'max:10',            
         ];
     }
 }

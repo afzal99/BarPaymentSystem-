@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItemGroupsTable extends Migration
+class AddTrigger extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateItemGroupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('item__groups', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('description');
-            $table->timestamps();
-        });
+        DB::unprepared('CREATE TRIGGER creditBalance AFTER INSERT ON sales FOR EACH ROW
+        BEGIN
+            UPDATE Users SET balance = balance - NEW.price
+            WHERE Users.id = NEW.user_id; 
+        END;');
     }
 
     /**
@@ -28,6 +27,6 @@ class CreateItemGroupsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('item__groups');
+        DB::unprepared('DROP TRIGGER `sale`');
     }
 }

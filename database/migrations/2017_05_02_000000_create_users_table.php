@@ -13,13 +13,13 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        if(!Schema::hasTable('users')){
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('fname');
             $table->string('lname');
             $table->string('email')->unique();
             $table->string('password',60);
+            $table->string('balance',60)->nullable()->unsigned();
             $table->string('contact')->nullable();
             $table->string('nfc')->nullable();
             $table->string('secret')->nullable();
@@ -27,7 +27,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
 
            
-        });}
+        });
     }
 
     /**
